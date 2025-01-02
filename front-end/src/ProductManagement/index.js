@@ -33,15 +33,15 @@ function Index() {
 <BrowserRouter>
      <div className='navBar'>
           
-            <NavLink className="navLinks" to="/categoryMaster">CategoryMaster</NavLink>
+            <NavLink className="navLinks" to="/">CategoryMaster</NavLink>
             <NavLink className="navLinks" to= "/productMaster" >ProductMaster</NavLink>
-            <NavLink className="navLinks" to="/"> ProductList</NavLink>
+            <NavLink className="navLinks" to="/productList"> ProductList</NavLink>
      </div>
 
   <Routes>
-      <Route path="/"  element={<ProductList/>}/>
+      <Route path="/"  element= {<CategoryMaster/>}/>
       <Route path='/productMaster' element={<ProductMaster/>} />
-      <Route path="/categoryMaster" element = {<CategoryMaster/>} />
+      <Route path="/productList" element = {<ProductList/>} />
   </Routes>
 
      </BrowserRouter>  
