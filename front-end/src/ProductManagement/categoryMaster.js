@@ -15,7 +15,7 @@ function CategoryMaster() {
         e.preventDefault()
         setBtnStatus({ ...BtnStatus, addCategoryBtnStatus: true })
 
-        axios.post("http://localhost:8080/createCategory", { categoryName: categoryInput }).then((res) => {
+        axios.post("https://nimaptask.onrender.com/createCategory", { categoryName: categoryInput }).then((res) => {
             console.log(res)
             if (res.data.message == "Success") {
                 setApiCall((prev) => !prev)
@@ -34,7 +34,7 @@ function CategoryMaster() {
         e.preventDefault()
         if (editCategoryInput) {
             setBtnStatus({ ...BtnStatus, editBtnInsideEditFunStatus: true })
-            axios.put("http://localhost:8080/editCategory", { categoryID: BtnStatus.editCategoryBtnStatus, categoryTitle: editCategoryInput }).then((res) => {
+            axios.put("https://nimaptask.onrender.com/editCategory", { categoryID: BtnStatus.editCategoryBtnStatus, categoryTitle: editCategoryInput }).then((res) => {
                 // console.log(res)
                 if (res.data.message == "Success") {
                     setApiCall((prev) => !prev)
@@ -68,7 +68,7 @@ function CategoryMaster() {
             let userAgree = window.confirm("Are you sure you want to delete this category? The products under this category will be moved to 'Uncategorized Products'.This action cannot be undone.")
             if (userAgree) {
                 setBtnStatus({ ...BtnStatus, deleteCatrgoryBtnStatus: categoryId })
-                axios.delete(`http://localhost:8080/deleteCategory/${categoryId}`).then((res) => {
+                axios.delete(`https://nimaptask.onrender.com/${categoryId}`).then((res) => {
                     console.log(res)
                     if (res.data.message == "Success") {
                         setApiCall((prev) => !prev)

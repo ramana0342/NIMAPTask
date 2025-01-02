@@ -18,7 +18,7 @@ function Index() {
     
 
     useEffect(()=>{
-               axios.get("http://localhost:8080/getData").then((res)=>{
+               axios.get("https://nimaptask.onrender.com/getData").then((res)=>{
                     // console.log(res)
                      setAllData(res.data.productsData)
                }).catch((err)=>{

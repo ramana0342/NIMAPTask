@@ -34,7 +34,7 @@ function ProductMaster() {
             e.preventDefault()
             setBtnsStatus({...BtnsStatus,productBtnStatus:true})
         if(inputProductData.categoryID && inputProductData.productTitle){
-            axios.post("http://localhost:8080/createProduct",inputProductData).then((res)=>{
+            axios.post("https://nimaptask.onrender.com/createProduct",inputProductData).then((res)=>{
                       //console.log(res)
                       if(res.data.message == "Success"){
                         setApiCall((prev)=>!prev)
@@ -56,7 +56,7 @@ function ProductMaster() {
                               if(id.currentCategoryID&&id.currentProductID&&inputProductData.categoryID&&inputProductData.productTitle){
                                        if(id.currentCategoryID != inputProductData.categoryID || id.currentproductTitle != inputProductData.productTitle ){
                                         setBtnsStatus({...BtnsStatus,productBtnStatus:true})
-                                          axios.put(`http://localhost:8080/editProduct/${id.currentCategoryID}/${id.currentProductID}`,inputProductData).then((res)=>{
+                                          axios.put(`https://nimaptask.onrender.com/editProduct/${id.currentCategoryID}/${id.currentProductID}`,inputProductData).then((res)=>{
                                                   console.log(res)
                                                   if(res.data.message=="Success"){
                                                     setApiCall((prev)=>!prev)
@@ -78,7 +78,7 @@ function ProductMaster() {
            // console.log(categoryID,productID)
                  if(categoryID&&productID){
                     //   console.log("123")
-                         axios.delete(`http://localhost:8080/deleteProduct/${categoryID}/${productID}`).then((res)=>{
+                         axios.delete(`https://nimaptask.onrender.com/deleteProduct/${categoryID}/${productID}`).then((res)=>{
                                  // console.log(res)
                                  if(res.data.message=="Success"){
                                        setApiCall((prev)=>!prev)

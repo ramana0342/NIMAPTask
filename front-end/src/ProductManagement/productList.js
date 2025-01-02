@@ -10,7 +10,7 @@ function ProductList() {
     const [displayData,setDisplayData] = useState([])
 
   useEffect(()=>{
-           axios.get("http://localhost:8080/getPaginationData/1").then((res)=>{
+           axios.get("https://nimaptask.onrender.com/getPaginationData/1").then((res)=>{
               console.log(res)
                settotalPageNumbers(res.data.buttonsArr)
                setnumberOfPages(res.data.lastNumberPage)
@@ -20,7 +20,7 @@ function ProductList() {
 
   const handlePageChange = (page)=>{
                    setCurrentPage(page)
-                   axios.get(`http://localhost:8080/getPaginationData/${page}`).then((res)=>{
+                   axios.get(`https://nimaptask.onrender.com/getPaginationData/${page}`).then((res)=>{
                    console.log(res)
                    settotalPageNumbers(res.data.buttonsArr)
                    setnumberOfPages(res.data.lastNumberPage)
