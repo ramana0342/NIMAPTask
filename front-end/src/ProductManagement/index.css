@@ -1,0 +1,92 @@
+.navBar{
+      
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    background-color: aqua;
+}
+
+.InputFiled{
+      width:25%;
+      cursor: pointer;
+}
+.categoryFormDiv{
+      margin: 20px;
+}
+
+
+.categoryFormDiv form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-select{
+      width: 162px;
+      cursor: pointer;
+}
+
+.cedBTn{
+    margin: 2px;
+    width: 100px;
+}
+
+.editInputFiled{
+    width: 70%;
+}
+
+
+
+
+.paginationButtons{
+    padding: 10px;
+    
+}
+.paginationDiv{
+     
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   
+     
+} 
+
+.paginationButtons{
+    background-color: aqua;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.paginationButtonsArrows{
+    background-color: aqua;
+    cursor: pointer;
+    padding: 8px;
+    margin: 0px;
+    width: 100px;
+    text-align: center;
+    
+}
+.paginationInnerDiv{
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    margin: 12px;
+    position: fixed;
+    bottom: 100px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.navLinks{
+      text-decoration: none;
+      color: red;
+      font-size: large;
+      font-weight: bolder;
+}
+.active{
+      color: darkgreen;
+}
