@@ -68,7 +68,7 @@ function CategoryMaster() {
             let userAgree = window.confirm("Are you sure you want to delete this category? The products under this category will be moved to 'Uncategorized Products'.This action cannot be undone.")
             if (userAgree) {
                 setBtnStatus({ ...BtnStatus, deleteCatrgoryBtnStatus: categoryId })
-                axios.delete(`https://nimaptask.onrender.com/${categoryId}`).then((res) => {
+                axios.delete(`https://nimaptask.onrender.com/deleteCategory/${categoryId}`).then((res) => {
                     console.log(res)
                     if (res.data.message == "Success") {
                         setApiCall((prev) => !prev)
@@ -91,7 +91,7 @@ function CategoryMaster() {
                 <div className='categoryFormDiv'>
                     <form onSubmit={handelCategorySubmit}>
                         <input value={categoryInput} type="text" class="form-control InputFiled" placeholder="Type Category Name" aria-label="Username" aria-describedby="basic-addon1" onChange={(e) => { setCategoryInput(e.target.value) }} />
-                        {BtnStatus.addCategoryBtnStatus ? <button class="btn btn-primary" type="button" disabled>  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <span role="status">Adding...</span></button>
+                        {BtnStatus.addCategoryBtnStatus ? <button class="btn btn-warning" type="button" disabled>  <span class="spinner-border spinner-border-sm" aria-hidden="true"></span> <span role="status">Adding...</span></button>
                             : <button class="btn btn-primary" type='submit'>Add Category</button>}
                     </form>
                 </div>

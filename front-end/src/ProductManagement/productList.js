@@ -31,7 +31,7 @@ function ProductList() {
   return (<>
 
 <div class="row row-cols-1 row-cols-md-2 g-4" style={{width:"100%"}}>
-             {displayData.map((item,index)=>{
+             {displayData.length>0 ?displayData.map((item,index)=>{
                       return(<>
                                <div class="col">
     <div class="card" style={{margin:"10px 50px"}}>
@@ -45,7 +45,7 @@ function ProductList() {
   </div>
 
                       </>)  
-             })}
+             }):<div style={{display:"flex",justifyContent:"center",width:"100%"}}><h1 style={{textAlign:"center"}}>Loading Data</h1></div>}
   </div>
 
 
